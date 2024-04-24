@@ -19,9 +19,13 @@ class FavouritesView extends GetView<FavouritesController> {
           centerTitle: true,
         ),
         body: GetBuilder<FavouritesController>(
-          builder: (controller) => Padding(
-            padding: const EdgeInsets.all(16.0),
-          ),
+          builder: (controller) => ListView.builder(
+              shrinkWrap: true,
+              itemCount: controller.userFav.length,
+              itemBuilder: (context, index) => FavCard(
+                    favItem: controller.userFav[index],
+                    index: index,
+                  )),
         ));
   }
 }

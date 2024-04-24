@@ -19,7 +19,7 @@ class MainView extends GetView<MainController> {
           backgroundColor: Color(0xFFF4EADF),
           color: Color(0xFF002244), // Customize icon color
           items: const [
-            Icon(Icons.home_max, size: 30, color: Color(0xFFF4EADF)),
+            Icon(Icons.home_outlined, size: 30, color: Color(0xFFF4EADF)),
             Icon(Icons.list, size: 30, color: Color(0xFFF4EADF)),
             Icon(Icons.add_circle, size: 30, color: Color(0xFFF4EADF)),
             Icon(Icons.shopping_basket, size: 30, color: Color(0xFFF4EADF)),

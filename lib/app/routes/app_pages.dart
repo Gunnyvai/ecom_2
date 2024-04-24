@@ -38,8 +38,6 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
-import '../modules/message/bindings/message_binding.dart';
-import '../modules/message/views/message_view.dart';
 import '../modules/newcategory/bindings/newcategory_binding.dart';
 import '../modules/newcategory/views/newcategory_view.dart';
 import '../modules/newproduct/bindings/newproduct_binding.dart';
@@ -54,8 +52,6 @@ import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
-import '../modules/sendMessage/bindings/send_message_binding.dart';
-import '../modules/sendMessage/views/send_message_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/thriftcategory/bindings/thriftcategory_binding.dart';
@@ -174,16 +170,6 @@ class AppPages {
       name: _Paths.EDITPROFILE,
       page: () => const EditprofileView(),
       binding: EditprofileBinding(),
-    ),
-    GetPage(
-      name: _Paths.SEND_MESSAGE,
-      page: () => const SendMessageView(),
-      binding: SendMessageBinding(),
-    ),
-    GetPage(
-      name: Routes.MESSAGE,
-      page: () => const MessageView(),
-      binding: MessageBinding(),
     ),
     GetPage(
       name: _Paths.ORDER_DETAILS,

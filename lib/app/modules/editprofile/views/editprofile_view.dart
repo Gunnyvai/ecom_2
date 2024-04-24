@@ -50,7 +50,7 @@ class EditprofileView extends StatelessWidget {
                     controller: controller.fullNameController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your full name';
+                        return 'Name cannot be empty';
                       }
                       return null;
                     },

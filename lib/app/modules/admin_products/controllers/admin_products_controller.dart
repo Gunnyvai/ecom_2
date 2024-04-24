@@ -91,7 +91,7 @@ class AdminProductsController extends GetxController {
     } catch (e) {
       Get.showSnackbar(GetSnackBar(
         backgroundColor: Colors.red,
-        message: 'Something went wrong',
+        message: 'Product cannot be deleted as it is already ordered by user',
         duration: const Duration(seconds: 3),
       ));
     }

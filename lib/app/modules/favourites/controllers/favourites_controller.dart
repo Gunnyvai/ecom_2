@@ -13,6 +13,7 @@ class FavouritesController extends GetxController {
   void onInit() {
     super.onInit();
     mapFav();
+    print(userFav);
   }
 
   @override
@@ -31,7 +32,7 @@ class FavouritesController extends GetxController {
         .any((element) => element.product.productId == product.productId)) {
       Get.showSnackbar(const GetSnackBar(
         backgroundColor: Colors.red,
-        message: 'Product already in cart!',
+        message: 'Product already favourited!',
         duration: Duration(seconds: 3),
       ));
       return;
@@ -65,6 +66,11 @@ class FavouritesController extends GetxController {
     userFav.removeAt(index);
     updateLocal();
     update();
+    Get.showSnackbar(const GetSnackBar(
+      backgroundColor: Colors.green,
+      message: "Product deleted frpm Favourites",
+      duration: Duration(seconds: 2),
+    ));
   }
 }
 

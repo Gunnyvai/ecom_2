@@ -13,19 +13,21 @@ class Stats {
   final String? totalUsers;
   final String? totalOrders;
   final String? totalProducts;
+  final String? totalThriftProduct;
 
-  Stats({
-    this.totalIncome,
-    this.totalUsers,
-    this.totalOrders,
-    this.totalProducts,
-  });
+  Stats(
+      {this.totalIncome,
+      this.totalUsers,
+      this.totalOrders,
+      this.totalProducts,
+      this.totalThriftProduct});
 
   factory Stats.fromJson(Map<String, dynamic> json) => Stats(
         totalIncome: json["total_income"],
         totalUsers: json["total_users"],
         totalOrders: json["total_orders"],
         totalProducts: json["total_products"],
+        totalThriftProduct: json["total_thrift_products"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -33,5 +35,6 @@ class Stats {
         "total_users": totalUsers,
         "total_orders": totalOrders,
         "total_products": totalProducts,
+        "total_thrift_products": totalThriftProduct
       };
 }

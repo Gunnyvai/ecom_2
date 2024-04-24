@@ -1,4 +1,4 @@
-var ipAddress = '192.168.0.19';
+var ipAddress = '192.168.1.119';
 
 var getImageUrl = (imageUrl) {
   return 'http://$ipAddress/ecom2_api/$imageUrl';

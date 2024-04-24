@@ -133,6 +133,7 @@ class HomeController extends GetxController {
           var result = jsonDecode(response.body);
 
           if (result['success']) {
+            clearAddPopup();
             Get.back();
             getProducts();
             try {
@@ -154,6 +155,7 @@ class HomeController extends GetxController {
             ));
           }
         } catch (e) {
+          print(e);
           Get.showSnackbar(const GetSnackBar(
             backgroundColor: Colors.red,
             message: 'Something went wrong',
@@ -162,6 +164,15 @@ class HomeController extends GetxController {
         }
       }
     } catch (e) {}
+  }
+
+  clearAddPopup() {
+    titleController.clear();
+    descriptionController.clear();
+    priceController.clear();
+    selectedCategory!;
+    isThrift = false.obs;
+    imageBytes = null;
   }
 
   void addCategory() async {
@@ -217,7 +228,7 @@ class HomeController extends GetxController {
         } catch (e) {
           Get.showSnackbar(const GetSnackBar(
             backgroundColor: Colors.red,
-            message: 'Something went wrong',
+            message: 'Select Image',
             duration: Duration(seconds: 3),
           ));
         }

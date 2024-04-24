@@ -99,7 +99,7 @@ class AdminCategoriesController extends GetxController {
       print(e);
       Get.showSnackbar(const GetSnackBar(
         backgroundColor: Colors.red,
-        message: 'Something went wrong',
+        message: 'Category cannot be deleted as it is used by existing product',
         duration: Duration(seconds: 3),
       ));
     }

@@ -1,6 +1,7 @@
 import 'package:ecom_2/app/constants.dart';
 import 'package:ecom_2/app/model/product.dart';
 import 'package:ecom_2/app/modules/cart/controllers/cart_controller.dart';
+import 'package:ecom_2/app/modules/favourites/controllers/favourites_controller.dart';
 import 'package:ecom_2/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cartController = Get.find<CartController>();
+    var favouriteController = Get.put(FavouritesController());
     var isFavorite = false.obs;
     return GestureDetector(
       onTap: () {
@@ -46,7 +48,7 @@ class ProductCard extends StatelessWidget {
                     tag: 'product+${product.productId}',
                     child: Image.network(
                       getImageUrl(product.imageUrl ?? ''),
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
@@ -84,7 +86,7 @@ class ProductCard extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      isFavorite.value = !isFavorite.value;
+                      favouriteController.addFav(product: product);
                     },
                     icon: Obx(
                       () => Icon(
